@@ -14,7 +14,6 @@ import com.zoho.dialogs.Params
 import com.zoho.dialogs.R
 import java.util.*
 
-
 /**
  * A simple [Fragment] subclass.
  * Use the [Tab2.newInstance] factory method to
@@ -66,7 +65,6 @@ internal class TimeFragment(private var params: Params) : Fragment() {
         buttonLayout.orientation = LinearLayout.HORIZONTAL
         buttonLayout.layoutParams =
             LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT)
-//        buttonLayout.setBackgroundColor(Color.BLUE)
 
         val width = getButtonWidth()
         params.positiveButtonText?.apply {
@@ -130,7 +128,6 @@ internal class TimeFragment(private var params: Params) : Fragment() {
     }
 
     private fun getButtonWidth(): Int {
-        println("<<< WIDTH ${params.width} -- ${params.width/3}")
         return if (params.neutralButtonText != null && params.negativeButtonText != null && params.positiveButtonText != null) {
             params.width/3
         } else if(params.positiveButtonText != null && params.negativeButtonText != null) {
