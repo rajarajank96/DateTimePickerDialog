@@ -1,10 +1,10 @@
-package com.zoho.dialogs
+package com.example.dialogs
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
-import com.zoho.dialogs.tabs.DateFragment
-import com.zoho.dialogs.tabs.TimeFragment
+import com.example.dialogs.tabs.DateFragment
+import com.example.dialogs.tabs.TimeFragment
 
 internal class PagerAdapter(fragmentManager: FragmentManager, var noOfTabs: Int): FragmentStatePagerAdapter(fragmentManager, noOfTabs) {
 

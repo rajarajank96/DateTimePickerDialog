@@ -1,4 +1,4 @@
-package com.zoho.dialogs
+package com.example.dialogs
 
 interface OnClickListener {
     fun onClick()

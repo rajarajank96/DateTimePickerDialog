@@ -1,4 +1,4 @@
-package com.zoho.dialogs.tabs
+package com.example.dialogs.tabs
 
 import android.graphics.Typeface
 import android.os.Build
@@ -10,8 +10,8 @@ import android.widget.TextView
 import android.widget.TimePicker
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
-import com.zoho.dialogs.Params
-import com.zoho.dialogs.R
+import com.example.dialogs.Params
+import com.example.dialogs.R
 import java.util.*
 
 /**

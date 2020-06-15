@@ -1,4 +1,4 @@
-package com.zoho.dialogs.tabs
+package com.example.dialogs.tabs
 
 import android.os.Build
 import android.os.Bundle
@@ -10,7 +10,7 @@ import android.view.ViewGroup
 import android.widget.DatePicker
 import android.widget.LinearLayout
 import androidx.annotation.RequiresApi
-import com.zoho.dialogs.Params
+import com.example.dialogs.Params
 import java.util.*
 
 /**

@@ -1,4 +1,4 @@
-package com.zoho.dialogs
+package com.example.dialogs
 
 import org.junit.Test
 

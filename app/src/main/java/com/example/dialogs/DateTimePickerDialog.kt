@@ -1,21 +1,14 @@
-package com.zoho.dialogs
+package com.example.dialogs
 
 import android.app.Activity
-import android.content.res.ColorStateList
 import android.graphics.Color
-import android.graphics.Typeface
 import android.os.Bundle
 import android.util.DisplayMetrics
 import android.view.*
-import android.widget.Button
 import android.widget.LinearLayout
-import android.widget.TextView
 import androidx.fragment.app.DialogFragment
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
-import java.time.DayOfWeek
-import java.time.Month
-import java.time.Year
 import java.util.*
 
 
