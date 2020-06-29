@@ -12,6 +12,9 @@ Features:
 In this widget, view pager 2 is used that enables user to swipe between the tabs. Tab layout is used which holds the 2 fragments DATE and TIME. These fragments reside inside a dialog which itself is a fragment, the Dialog fragment. 
 
 How to use this: 
-val dateTimePickerDialog = DateTimePickerDialog() 
+
+val dateTimePickerDialog = DateTimePickerDialog()
+
 dateTimePickerDialog( fragmentManager, TAG ) 
+
 //dateTimePickerDialog. -> to access properties like themes, listeners, etc. 
