@@ -7,6 +7,7 @@ Features:
 2. Date and Time change listeners. 
 3. SetDateTime which loads preset date and time. 
 4. Options to customise picker themes and tab colours, tab text colours, etc. 
+5. It has 2 modes - Calendar mode and spinner mode.
 
 In this widget, view pager 2 is used that enables user to swipe between the tabs. Tab layout is used which holds the 2 fragments DATE and TIME. These fragments reside inside a dialog which itself is a fragment, the Dialog fragment. 
 
