@@ -1,5 +1,6 @@
 package com.example.dialogs.tabs
 
+import android.annotation.SuppressLint
 import android.os.Build
 import android.os.Bundle
 import android.view.ContextThemeWrapper
@@ -11,6 +12,8 @@ import android.widget.DatePicker
 import android.widget.LinearLayout
 import androidx.annotation.RequiresApi
 import com.example.dialogs.Params
+import com.example.dialogs.PickerMode
+import com.example.dialogs.R
 import java.util.*
 
 /**
@@ -24,6 +27,7 @@ internal class DateFragment(private var params: Params) : Fragment() {
         super.onCreate(savedInstanceState)
     }
 
+    @SuppressLint("InflateParams")
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,7 +38,12 @@ internal class DateFragment(private var params: Params) : Fragment() {
         ll.orientation = LinearLayout.VERTICAL
         ll.layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)
 
-        val datePicker = DatePicker(ContextThemeWrapper(context, params.pickerTheme))
+        val datePicker : DatePicker = if (params.pickerMode == PickerMode.SPINNER) {
+            inflater.inflate(R.layout.date_picker, null) as DatePicker
+        } else {
+            DatePicker(ContextThemeWrapper(context, params.pickerTheme))
+        }
+
         datePicker.id = View.generateViewId()
         datePicker.layoutParams =
             LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)

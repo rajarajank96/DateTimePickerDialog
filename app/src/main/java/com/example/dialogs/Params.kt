@@ -27,6 +27,8 @@ internal class Params {
     var pickerTheme: Int = R.style.my_dialog_theme
     var tabTheme: Int = Color.BLUE
 
+    var pickerMode: PickerMode = PickerMode.CALENDAR
+
     fun setOnDateChangeListener(listener: (year: Int, monthOfYear: Int, dayOfMonth: Int) -> Unit) {
         this.dateChangeListener = listener
     }

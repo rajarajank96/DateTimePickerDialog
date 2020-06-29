@@ -11,7 +11,6 @@ import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
 import java.util.*
 
-
 class DateTimePickerDialog: DialogFragment() {
 
     private var onDateChangeListener: String = String()
@@ -24,6 +23,8 @@ class DateTimePickerDialog: DialogFragment() {
     var tabTextColor: Int = Color.parseColor("#727272")
     var tabSelectedTextColor: Int = Color.WHITE
     var tabIndicatorColor: Int = Color.YELLOW
+
+    var pickerMode: PickerMode = PickerMode.CALENDAR
 
     fun setOnDateChangeListener(listener: (year: Int, monthOfYear: Int, dayOfMonth: Int) -> Unit) {
         params.dateChangeListener = listener
@@ -69,9 +70,13 @@ class DateTimePickerDialog: DialogFragment() {
         params.width = (width * 0.7).toInt()
         val window = dialog?.window ?: return
         val params = window.attributes
-        params.height = (height * 0.7).toInt()
-        window.attributes = params
 
+        if (this.params.pickerMode == PickerMode.SPINNER) {
+            params.height = (height * 0.45).toInt()
+        } else {
+            params.height = (height * 0.7).toInt()
+        }
+        window.attributes = params
     }
 
     override fun onCreateView(
@@ -82,6 +87,7 @@ class DateTimePickerDialog: DialogFragment() {
         params.is24HourView = this.is24HourView
         params.pickerTheme = this.pickerTheme
         params.tabTheme = this.tabTheme
+        params.pickerMode = this.pickerMode
 
         myPagerAdapter = PagerAdapter(childFragmentManager, 2)
         myPagerAdapter.params = this.params
@@ -109,4 +115,8 @@ class DateTimePickerDialog: DialogFragment() {
 
         return ll
     }
+}
+
+enum class PickerMode {
+    SPINNER, CALENDAR
 }

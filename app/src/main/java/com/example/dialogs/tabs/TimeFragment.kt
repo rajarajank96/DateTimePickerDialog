@@ -11,6 +11,7 @@ import android.widget.TimePicker
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import com.example.dialogs.Params
+import com.example.dialogs.PickerMode
 import com.example.dialogs.R
 import java.util.*
 
@@ -35,7 +36,11 @@ internal class TimeFragment(private var params: Params) : Fragment() {
         ll.orientation = LinearLayout.VERTICAL
         ll.layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)
 
-        val timePicker = TimePicker(ContextThemeWrapper(context, params.pickerTheme))
+        var timePicker = if (params.pickerMode == PickerMode.SPINNER) {
+            inflater.inflate(R.layout.time_picker, null) as TimePicker
+        } else {
+            TimePicker(ContextThemeWrapper(context, params.pickerTheme))
+        }
         timePicker.id = View.generateViewId()
         timePicker.layoutParams =
             LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)

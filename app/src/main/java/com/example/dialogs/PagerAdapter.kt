@@ -6,7 +6,7 @@ import androidx.fragment.app.FragmentStatePagerAdapter
 import com.example.dialogs.tabs.DateFragment
 import com.example.dialogs.tabs.TimeFragment
 
-internal class PagerAdapter(fragmentManager: FragmentManager, var noOfTabs: Int): FragmentStatePagerAdapter(fragmentManager, noOfTabs) {
+internal class PagerAdapter(fragmentManager: FragmentManager, private var noOfTabs: Int): FragmentStatePagerAdapter(fragmentManager, noOfTabs) {
 
     internal lateinit var params: Params
 
